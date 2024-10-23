@@ -1,4 +1,7 @@
 image
 image.ppm
+rt
+*.a
 *.o
+*/*.a
 */*.o
