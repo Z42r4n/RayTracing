@@ -1,0 +1,4 @@
+image
+image.ppm
+*.o
+*/*.o
