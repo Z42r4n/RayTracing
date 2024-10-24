@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vec3.hpp>
+#include <color.hpp>
 extern "C"
 {
 #include <mlx.h>
@@ -57,11 +59,9 @@ int main()
             auto r = double(x) / (image_width - 1);
             auto g = double(y) / (image_height - 1);
             auto b = 0.0;
+            Color color(r, g, b);
 
-            int ir = int(255.999 * r);
-            int ig = int(255.999 * g);
-            int ib = int(255.999 * b);
-            my_mlx_pixel_put(&img, x, y, create_trgb(0, ir, ig, ib));
+            my_mlx_pixel_put(&img, x, y, color.write_color());
         }
     }
     std::clog << "\rDone.            \n";
